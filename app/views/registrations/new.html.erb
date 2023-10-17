@@ -1,0 +1,15 @@
+<div class="container align-items-center justify-content-center w-50 shadow-lg p-5 mb-5 mt-5 bg-light rounded">
+
+  <h1>Registration for <%= link_to @event.name, @event %></h1>
+
+  <%= form_with(model: [@event, @registration]) do |f| %>
+
+  	<%= render "shared/errors", object: @registration %>
+
+    <%= f.label :how_hear %>
+    <%= f.select :how_heard, Registration::HOW_HEARD_OPTIONS, prompt: "Pick one" %>
+
+    <%= f.submit %>
+  <% end %>
+  
+</div>
