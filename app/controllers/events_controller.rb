@@ -23,6 +23,7 @@ class EventsController < ApplicationController
   end
 
   def show
+  
     @likers = @event.likers
     @categories = @event.categories
     if current_user
@@ -67,6 +68,6 @@ class EventsController < ApplicationController
 
   def event_params
     params.require(:event).
-    permit(:name, :description, :location, :price, :starts_at, :capacity, :image_file_name, category_ids: [])
+    permit(:name, :description, :location, :price, :starts_at, :main_image, :capacity, category_ids: [])
   end
 end
