@@ -25,6 +25,7 @@ class RegistrationsController < ApplicationController
     else
       @registration.user = current_user 
       if @registration.save
+        UserMailer.with(user: current_user, registration: @registration).registration_email.deliver_now
         redirect_to event_registrations_url(@event),
         notice: 'Thanks for registering!'
       else  

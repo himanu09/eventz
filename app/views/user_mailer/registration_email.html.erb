@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h1>Welcome to EventsByHimanshu, <%= @user.name %></h1>
+    <h2>Thanks For Registering in the Events, <%= @registration.event.name %></h2>
+    <p>
+      You have successfully Registered in  to EventsByHimanshu.com,
+      your username is: <%= @user.email %>.<br>
+    </p>
+
+    <% if @registrations.present? %>
+      <h3>Registrations</h3>
+      <% @registrations.each do |r| %>
+        <h4> <%= r.event.name %> </h4>
+      <% end %>
+    <% end %> 
+
+
+    <p>Thanks for joining and have a great day!</p>
+  </body>
+</html>

@@ -23,7 +23,6 @@ class EventsController < ApplicationController
   end
 
   def show
-  
     @likers = @event.likers
     @categories = @event.categories
     if current_user
